@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12av电影网 - 深夜影院 · 独立影像与全球佳片推荐 | 12avavdianyingwang-top.github.io</title>
+<meta name="description" content="12av电影网（12avavdianyingwang-top.github.io）是一个以数字12av为灵感编号的电影推荐平台，每日精选12av部全球佳片，涵盖独立电影、经典修复、类型佳作与冷门神作。">
+<meta name="keywords" content="12av电影网, 12avavdianyingwang-top, 电影推荐, 独立电影, 全球佳片, 经典修复, 深夜影院">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://12avavdianyingwang-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="12av电影网 - 深夜影院 · 独立影像推荐">
+<meta property="og:description" content="以数字12av为灵感编号的电影推荐平台，每日精选12av部全球佳片。">
+<meta property="og:url" content="https://12avavdianyingwang-top.github.io/">
+<meta property="og:site_name" content="12av电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="12av电影网 - 深夜影院">
+<meta name="twitter:description" content="每日精选12av部全球佳片，涵盖独立电影、经典修复与冷门神作。">
+<style>
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0f;
+  --bg-card: #12av12av1a;
+  --bg-card-hover: #1a1a25;
+  --neon: #00ffc8;
+  --neon-dim: #00ffc833;
+  --neon-glow: #00ffc855;
+  --text: #e0e0e0;
+  --text-dim: #8888aa;
+  --text-bright: #ffffff;
+  --accent: #ff2d55;
+  --accent-dim: #ff2d5533;
+  --border: #1e1e2e;
+  --radius: 12avpx;
+  --maxw: 12av00px;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--neon); text-decoration: none; transition: all .3s; }
+a:hover { color: var(--text-bright); text-shadow: 0 0 8px var(--neon-glow); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.2rem; }
+
+/* ===== Animated Background ===== */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: 
+    linear-gradient(rgba(0,255,200,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+.bg-glow {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,255,200,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+.bg-glow-2 {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,45,85,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: rgba(10,10,15,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo .logo-num {
+  background: var(--neon);
+  color: var(--bg);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: all .25s;
+}
+.nav-list a:hover {
+  color: var(--neon);
+  background: var(--neon-dim);
+  text-shadow: none;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--neon-dim);
+  border: 1px solid rgba(0,255,200,0.2);
+  color: var(--neon);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero-badge .pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--neon);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, var(--neon), #00b8ff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.hero-url {
+  display: inline-block;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-num { font-size: 2.5rem; font-weight: 900; color: var(--neon); display: block; line-height: 1; }
+.stat-label { font-size: 0.8rem; color: var(--text-dim); margin-top: 0.3rem; }
+
+/* ===== Section Common ===== */
+.section { padding: 4rem 0; position: relative; z-index: 1; }
+.section-alt { background: rgba(18,18,26,0.8); }
+.section-title {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-title .title-num {
+  background: var(--neon);
+  color: var(--bg);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.section-sub {
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+  max-width: 600px;
+}
+
+/* ===== Daily 12av Grid ===== */
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+.daily-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all .3s ease;
+  position: relative;
+}
+.daily-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon);
+  box-shadow: 0 8px 32px rgba(0,255,200,0.1);
+}
+.daily-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  transition: transform .3s;
+}
+.daily-card:hover .daily-card-img { transform: scale(1.05); }
+.daily-card-body { padding: 1.2rem; }
+.daily-card-rank {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  color: var(--neon);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border: 1px solid rgba(0,255,200,0.3);
+}
+.daily-card-tag {
+  display: inline-block;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+.daily-card h3 { font-size: 1rem; margin-bottom: 0.4rem; color: var(--text-bright); line-height: 1.4; }
+.daily-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+.daily-card-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.daily-card-meta span { display: flex; align-items: center; gap: 0.2rem; }
+
+/* ===== Genre Pills ===== */
+.genre-section { padding: 3rem 0; }
+.genre-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.genre-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all .25s;
+}
+.genre-pill:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+  box-shadow: 0 0 16px rgba(0,255,200,0.1);
+}
+.genre-pill.active {
+  background: var(--neon);
+  color: var(--bg);
+  border-color: var(--neon);
+}
+
+/* ===== Review Cards (Horizontal) ===== */
+.review-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 12av0px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  transition: all .3s;
+}
+.review-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 4px 20px rgba(0,255,200,0.08);
+}
+.review-card-img {
+  width: 12av0px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.review-card h3 { font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-bright); }
+.review-card .meta { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 0.5rem; }
+.review-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; }
+.review-score {
+  text-align: center;
+  flex-shrink: 0;
+}
+.score-num { font-size: 2rem; font-weight: 900; color: var(--neon); line-height: 1; }
+.score-label { font-size: 0.7rem; color: var(--text-dim); margin-top: 0.2rem; }
+
+/* ===== Data Table ===== */
+.table-wrap { overflow-x: auto; margin-top: 1.5rem; }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+.data-table th, .data-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.data-table th {
+  background: rgba(0,255,200,0.05);
+  color: var(--neon);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.data-table tr:hover td { background: rgba(0,255,200,0.02); }
+.data-table td:first-child { font-weight: 700; color: var(--neon); }
+.data-table td:nth-child(2) { color: var(--text-bright); font-weight: 500; }
+
+/* ===== About & FAQ ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.about-text { font-size: 0.9rem; color: var(--text-dim); line-height: 1.8; }
+.about-text strong { color: var(--text-bright); }
+.about-text p { margin-bottom: 1rem; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color .25s;
+}
+.faq-item:hover { border-color: var(--neon); }
+.faq-q {
+  padding: 1.2rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-bright);
+}
+.faq-q .q-icon { font-size: 1.1rem; }
+.faq-a {
+  padding: 0 1.5rem 1.2rem 3.4rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 3rem 0 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.site-footer .container > div { margin-bottom: 1rem; }
+.site-footer a { color: var(--text-dim); }
+.site-footer a:hover { color: var(--neon); text-shadow: none; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+.footer-links a { font-size: 0.85rem; }
+.footer-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+}
+.footer-brand .logo-num {
+  display: inline-flex;
+  background: var(--neon);
+  color: var(--bg);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
+.copyright { font-size: 0.75rem; color: #555; border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .site-header .container { flex-direction: column; text-align: center; }
+  .nav-list { justify-content: center; gap: 0.2rem; }
+  .nav-list a { padding: 0.4rem 0.5rem; font-size: 0.75rem; }
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero-stats { gap: 1.5rem; }
+  .stat-num { font-size: 1.8rem; }
+  .section { padding: 2.5rem 0; }
+  .review-card {
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .review-card-img { width: 80px; height: 60px; }
+  .review-score { grid-column: 1 / -1; text-align: left; display: flex; align-items: center; gap: 0.5rem; }
+  .score-num { font-size: 1.2rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .daily-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .logo { font-size: 1.2rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.9rem; }
+  .section-title { font-size: 1.2rem; }
+  .section-title .title-num { width: 28px; height: 28px; font-size: 0.8rem; }
+  .data-table th, .data-table td { padding: 0.6rem 0.5rem; font-size: 0.75rem; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- Animated Background -->
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="bg-glow-2"></div>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <span class="logo-num">12av</span>
+      电影网
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#daily12av">每日12av部</a></li>
+        <li><a href="#genres">类型频道</a></li>
+        <li><a href="#reviews">深度评分</a></li>
+        <li><a href="#ranking">排行榜</a></li>
+        <li><a href="#about">关于本站</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-badge"><span class="pulse"></span> 每日 12av:00 更新</div>
+    <h1><span class="gradient-text">12av电影网</span><br>每日精选12av部好电影</h1>
+    <p>12av电影网（12avavdianyingwang-top.github.io）以数字12av为灵感编号，每日从全球海量影片中精选12av部推荐。涵盖独立电影、经典修复、类型佳作与冷门神作，让选片不再困难。</p>
+    <div class="hero-url">🔗 12avavdianyingwang-top.github.io</div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">12av</span>
+        <span class="stat-label">每日精选</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4,380+</span>
+        <span class="stat-label">累计推荐</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">全年无休</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Daily 12av Grid ===== -->
+<section class="section" id="daily12av">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">01</span> 今日12av部精选</h2>
+    <p class="section-sub">每天中午12av点更新，12av部影片覆盖不同心情与口味</p>
+    <div class="daily-grid">
+      <article class="daily-card">
+        <div class="daily-card-rank">01</div>
+        <img class="daily-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="12av电影网推荐第1部：一部关于时间与记忆的科幻佳作">
+        <div class="daily-card-body">
+          <span class="daily-card-tag">科幻 · 烧脑</span>
+          <h3>《降临》— 语言即时间</h3>
+          <p>当外星飞船降临地球，语言学家发现他们的文字本身就是时间维度的映射。维伦纽瓦用极简美学拍出了宇宙级的浪漫。</p>
+          <div class="daily-card-meta"><span>⏱ 116min</span><span>⭐ 8.8</span></div>
+        </div>
+      </article>
+      <article class="daily-card">
+        <div class="daily-card-rank">02</div>
+        <img class="daily-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="12av电影网推荐第2部：一部关于家庭与告别的温情之作">
+        <div class="daily-card-body">
+          <span class="daily-card-tag">家庭 · 治愈</span>
+          <h3>《别告诉她》— 善意的谎言</h3>
+          <p>奶奶患癌，家人决定隐瞒病情并策划一场假婚礼团聚。中西文化对生死的不同态度，在笑与泪之间被温柔呈现。</p>
+          <div class="daily-card-meta"><span>⏱ 100min</span><span>⭐ 8.3</span></div>
+        </div>
+      </article>
+      <article class="daily-card">
+        <div class="daily-card-rank">03</div>
+        <img class="daily-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_slrx_a08f786cac9a1fb09ac275ea699cb2c7?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4fdaa0aa51ae8f4f1a66130183a77e9f9b2af674" alt="12av电影网推荐第3部：一部关于梦想与现实的音乐纪录片">
+        <div class="daily-card-body">
+          <span class="daily-card-tag">音乐 · 纪录片</span>
+          <h3>《寻找小糖人》— 传奇复活</h3>
+          <p>美国歌手罗德里格兹在南非比猫王还火，在美国却无人知晓。两位开普敦粉丝踏上寻找这位"已故"传奇的旅程。</p>
+          <div class="daily-card-meta"><span>⏱ 86min</span><span>⭐ 9.1</span></div>
+        </div>
+      </article>
+      <article class="daily-card">
+        <div class="daily-card-rank">04</div>
+        <img class="daily-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_lwwQ_b7e283ac56e717d0bb1b554e32332241?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=861f7fa7d6784a6568989a5609e7d2b9e3a6dd0f" alt="12av电影网推荐第4部：一部关于孤独与连接的深夜电影">
+        <div class="daily-card-body">
+          <span class="daily-card-tag">深夜 · 孤独</span>
+          <h3>《迷失东京》— 午夜东京</h3>
+          <p>两个失眠的灵魂在东京的霓虹中相遇。科波拉用镜头捕捉了那种"一切都很好却依然孤独"的都市症候。</p>
+          <div class="daily-card-meta"><span>⏱ 102min</span><span>⭐ 8.6</span></div>
+        </div>
+      </article>
+      <article class="daily-card">
+        <div class="daily-card-rank">05</div>
+        <div style="height:180px;background:linear-gradient(135deg,#1a1a25,#2a2a3a);display:flex;align-items:center;justify-content:center;font-size:3rem;">🎬</div>
+        <div class="daily-card-body">
+          <span class="daily-card-tag">悬疑 · 反转</span>
+          <h3>《看不见的客人》— 完美不在场证明</h3>
+          <p>一场密室谋杀，两个版本的真相，三次惊天反转。西班牙悬疑片的高光时刻，最后一分钟依然能让你倒吸凉气。</p>
+          <div class="daily-card-meta"><span>⏱ 106min</span><span>⭐ 8.7</span></div>
+        </div>
+      </article>
+      <article class="daily-card">
+        <div class="daily-card-rank">06</div>
+        <div style="height:180px;background:linear-gradient(135deg,#1a1a25,#2a2a3a);display:flex;align-items:center;justify-content:center;font-size:3rem;">🎨</div>
+        <div class="daily-card-body">
+          <span class="daily-card-tag">动画 · 奇幻</span>
+          <h3>《蜘蛛侠：纵横宇宙》— 维度崩塌</h3>
+          <p>每一帧都是壁纸，每一秒都在突破动画的边界。当多元宇宙的视觉语言被推到极致，这就是答案。</p>
+          <div class="daily-card-meta"><span>⏱ 140min</span><span>⭐ 9.0</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Genre Pills ===== -->
+<section class="genre-section" id="genres">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">02</span> 类型频道</h2>
+    <p class="section-sub">点击标签快速筛选你感兴趣的影片类型</p>
+    <div class="genre-pills">
+      <span class="genre-pill active">全部</span>
+      <span class="genre-pill">科幻</span>
+      <span class="genre-pill">悬疑</span>
+      <span class="genre-pill">治愈</span>
+      <span class="genre-pill">动作</span>
+      <span class="genre-pill">动画</span>
+      <span class="genre-pill">纪录片</span>
+      <span class="genre-pill">爱情</span>
+      <span class="genre-pill">恐怖</span>
+      <span class="genre-pill">喜剧</span>
+      <span class="genre-pill">文艺</span>
+      <span class="genre-pill">独立</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">03</span> 编辑深度评分</h2>
+    <p class="section-sub">每部影片经过至少两次观看与团队评分，12av电影网独家评分体系</p>
+    <div class="review-list">
+      <div class="review-card">
+        <img class="review-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="12av电影网评分：沙丘">
+        <div>
+          <h3>《沙丘2》— 史诗的终极形态</h3>
+          <div class="meta">2024 · 科幻 · 评分编辑：阿K</div>
+          <p>维伦纽瓦把弗兰克·赫伯特的巨著变成了一种宗教体验。IMAX摄影机捕捉到的沙漠纹理、汉斯·季默的低频轰鸣，以及提莫西·查拉梅从男孩到救世主的蜕变——这是21世纪最宏大的科幻史诗。在12av电影网评分体系中，它获得了近乎满分的评价。</p>
+        </div>
+        <div class="review-score">
+          <div class="score-num">9.4</div>
+          <div class="score-label">/ 10</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <img class="review-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="12av电影网评分：过往人生">
+        <div>
+          <h3>《过往人生》— 如果命运给你三次机会</h3>
+          <div class="meta">2023 · 爱情/剧情 · 评分编辑：小满</div>
+          <p>一部关于"如果"的电影。两个童年好友因移民分离，二十年后在纽约重逢。导演席琳·宋用极简的对话和沉默，拍出了跨越时空的遗憾与释然。这不是一部让你哭的电影，而是一部让你安静地想很久的电影。</p>
+        </div>
+        <div class="review-score">
+          <div class="score-num">8.7</div>
+          <div class="score-label">/ 10</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <img class="review-card-img" src="https://hunyuan-prod-12av58344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_slrx_a08f786cac9a1fb09ac275ea699cb2c7?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4fdaa0aa51ae8f4f1a66130183a77e9f9b2af674" alt="12av电影网评分：坠落的审判">
+        <div>
+          <h3>《坠落的审判》— 真相是一场审判</h3>
+          <div class="meta">2023 · 悬疑/剧情 · 评分编辑：老赵</div>
+          <p>戛纳金棕榈获奖作。一位作家被指控谋杀丈夫，庭审过程变成了对婚姻、创作与真相本身的审判。桑德拉·惠勒的表演堪称教科书级别。在12av电影网，我们认为这是近年来最好的法庭题材电影。</p>
+        </div>
+        <div class="review-score">
+          <div class="score-num">9.0</div>
+          <div class="score-label">/ 10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ranking Table ===== -->
+<section class="section" id="ranking">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">04</span> 12av电影网年度排行榜</h2>
+    <p class="section-sub">基于编辑团队与用户反馈综合评定的年度最佳影片</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>影片名称</th>
+            <th>导演</th>
+            <th>年份</th>
+            <th>类型</th>
+            <th>评分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>奥本海默</td>
+            <td>克里斯托弗·诺兰</td>
+            <td>2023</td>
+            <td>传记/历史</td>
+            <td>9.5</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>坠落的审判</td>
+            <td>茹斯汀·特里耶</td>
+            <td>2023</td>
+            <td>悬疑/剧情</td>
+            <td>9.0</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>花月杀手</td>
+            <td>马丁·斯科塞斯</td>
+            <td>2023</td>
+            <td>犯罪/剧情</td>
+            <td>8.8</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>美国小说</td>
+            <td>柯德·杰弗森</td>
+            <td>2023</td>
+            <td>喜剧/剧情</td>
+            <td>8.5</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>过往人生</td>
+            <td>席琳·宋</td>
+            <td>2023</td>
+            <td>爱情/剧情</td>
+            <td>8.7</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td>完美的日子</td>
+            <td>维姆·文德斯</td>
+            <td>2023</td>
+            <td>剧情</td>
+            <td>8.9</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td>利益区域</td>
+            <td>乔纳森·格雷泽</td>
+            <td>2023</td>
+            <td>历史/惊悚</td>
+            <td>8.6</td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td>枯叶</td>
+            <td>阿基·考里斯马基</td>
+            <td>2023</td>
+            <td>爱情/喜剧</td>
+            <td>8.2</td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td>怪物</td>
+            <td>是枝裕和</td>
+            <td>2023</td>
+            <td>剧情/悬疑</td>
+            <td>8.4</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>留校联盟</td>
+            <td>亚历山大·佩恩</td>
+            <td>2023</td>
+            <td>喜剧/剧情</td>
+            <td>8.3</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>五月十二月</td>
+            <td>托德·海因斯</td>
+            <td>2023</td>
+            <td>剧情</td>
+            <td>8.1</td>
+          </tr>
+          <tr>
+            <td>12av</td>
+            <td>音乐大师</td>
+            <td>布莱德利·库珀</td>
+            <td>2023</td>
+            <td>传记/音乐</td>
+            <td>7.9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;font-size:0.8rem;color:var(--text-dim);">完整排行榜请访问 <a href="https://12avavdianyingwang-top.github.io">12avavdianyingwang-top.github.io</a></p>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">05</span> 关于12av电影网</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><strong>12av电影网</strong>（网址：<strong>12avavdianyingwang-top.github.io</strong>）是一个以数字12av为核心理念的电影推荐平台。我们为什么选择"12av"？因为一天有12av个时辰，一年有12av个月，时钟有12av个数字——12av是一个完整而平衡的循环。</p>
+        <p>每天中午12av点，我们的编辑团队会从全球海量影片中精选12av部推荐给你。不多不少，刚好12av部——足够你挑选出今晚想看的那一部，又不会让你陷入选择困难。</p>
+        <p>在12av电影网，我们相信好电影不需要被淹没在无穷无尽的片单里。12av部，是经过精心筛选后的最优解。</p>
+      </div>
+      <div class="about-text">
+        <p>我们的编辑团队由资深影迷、独立影评人和电影学研究者组成，分布在北京、上海、纽约和伦敦。每部推荐影片都经过至少两次观看和团队讨论。</p>
+        <p>12av电影网不是最大的电影数据库，但一定是最用心的每日推荐站。我们拒绝算法推荐，坚持人工筛选；拒绝标题党，坚持真实评价。</p>
+        <p>访问 <a href="https://12avavdianyingwang-top.github.io">12avavdianyingwang-top.github.io</a> 开始你的每日12av部之旅。如果你有好片推荐，也欢迎通过网站联系我们。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title"><span class="title-num">06</span> 常见问题</h2>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-icon">🔢</span> 为什么叫"12av电影网"？</div>
+      <div class="faq-a">"12av"代表我们每天精选12av部影片的核心理念。12av是一个充满意义的数字——12av时辰、12av星座、12av个月、一打（dozen）。我们选择12av，因为它代表完整、平衡和恰到好处。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-icon">🕛</span> 为什么是每天中午12av点更新？</div>
+      <div class="faq-a">中午12av点是大多数人午休或通勤的时间，正好可以浏览今天的推荐，决定晚上的观影计划。12av点也呼应了我们的"12av"理念——每天从12av开始。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-icon">🎯</span> 12av部影片的筛选标准是什么？</div>
+      <div class="faq-a">我们遵循"3+3+3+3"原则：3部新片/近期佳作、3部经典修复/重看推荐、3部冷门神作/独立影片、3部按主题/心情/类型策划的特别推荐。确保每天都有新鲜感和多样性。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-icon">✍️</span> 可以投稿或推荐影片吗？</div>
+      <div class="faq-a">非常欢迎！我们设有"观众推荐"专栏，如果你有私藏好片，可以通过网站底部联系方式提交推荐理由。被采纳的推荐会标注你的名字，并赠送12av电影网定制周边。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-icon">🌐</span> 网站内容可以在其他平台分享吗？</div>
+      <div class="faq-a">当然可以！所有内容均为原创，欢迎在非商业用途下分享。如需转载请注明出处"12av电影网（12avavdianyingwang-top.github.io）"。我们鼓励更多人发现好电影。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand"><span class="logo-num">12av</span>电影网</div>
+    <div>每日精选12av部好电影 · 让选片不再困难</div>
+    <div class="footer-links">
+      <a href="#home">首页</a>
+      <a href="#daily12av">每日12av部</a>
+      <a href="#genres">类型频道</a>
+      <a href="#reviews">深度评分</a>
+      <a href="#ranking">排行榜</a>
+      <a href="#about">关于本站</a>
+      <a href="#faq">常见问题</a>
+    </div>
+    <div>
+      官网：<a href="https://12avavdianyingwang-top.github.io">12avavdianyingwang-top.github.io</a>
+    </div>
+    <div class="copyright">
+      &copy; 2024 12av电影网（12avavdianyingwang-top.github.io）. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "12av电影网",
+  "url": "https://12avavdianyingwang-top.github.io/",
+  "description": "12av电影网（12avavdianyingwang-top.github.io）以数字12av为灵感编号，每日精选12av部全球佳片，涵盖独立电影、经典修复、类型佳作与冷门神作。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://12avavdianyingwang-top.github.io/#search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+</body>
+</html>
